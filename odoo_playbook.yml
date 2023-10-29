@@ -1,0 +1,22 @@
+---
+- name: Deploy Odoo 16
+  hosts: odoo
+  become: yes
+  tasks:
+    - name: Set home directory
+      set_fact:
+        home_directory: "/home/ec2-user"
+
+    - name: Download run.sh
+      get_url:
+        url: https://raw.githubusercontent.com/salem98/odoo-16-docker-compose/main/run.sh
+        dest: "{{ home_directory }}/run.sh"
+        mode: '0755'
+
+    - name: Run run.sh script
+      command: "{{ home_directory }}/run.sh odoo-one 8069 20016"
+      register: run_output
+
+    - name: Display run.sh output
+      debug:
+        var: run_output.stdout_lines
