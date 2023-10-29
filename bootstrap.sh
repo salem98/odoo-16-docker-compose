@@ -29,13 +29,9 @@ docker-compose --version
 # Add user to Docker group
 sudo usermod -aG docker $(whoami)
 
-# Activate group changes and execute the remaining commands in a sub-shell
-newgrp docker <<EONG
 # Fetch script
-curl -s https://raw.githubusercontent.com/salem98/odoo-16-docker-compose/main/run.sh -o run.sh
-chmod +x run.sh
+sudo curl -s https://raw.githubusercontent.com/salem98/odoo-16-docker-compose/main/run.sh -o run.sh
+sudo chmod +x run.sh
 
 # Run script
-./run.sh odoo-one 8069 20016
-EONG
-
+sudo ./run.sh odoo-one 8069 20016
