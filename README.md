@@ -2,12 +2,17 @@
 
 ## Quick Installation
 
-Install [docker](https://docs.docker.com/get-docker/) and [docker-compose](https://docs.docker.com/compose/install/) yourself, then run the following to set up first Odoo instance @ `localhost:8069` (default master password: `lemdev.tech`):
+Run the following to fully setup and deploy first Odoo instance @ `localhost:8069` (default master password: `lemdev.tech`):
+Enviroment Ubuntu 22 AWS EC2
 
 ``` bash
-curl -s https://raw.githubusercontent.com/salem98/odoo-16-docker-compose/main/run.sh | sudo bash -s odoo-one 8069 20016
+curl -s https://raw.githubusercontent.com/salem98/odoo-16-docker-compose/main/full_deploy.sh | sudo bash -s odoo-one 8069 20016
 ```
-This setup Odoo instance @ `localhost:8069` (default master password: `lemdev.tech`):
+and/or run the following to set up another Odoo instance @ `localhost:8069` (default master password: `lemdev.tech`):
+
+``` bash
+curl -s https://raw.githubusercontent.com/salem98/odoo-16-docker-compose/main/full_deploy.sh | sudo bash -s odoo-two 11016 21016
+```
 
 Some arguments:
 * First argument (**odoo-one**): Odoo deploy folder
@@ -27,6 +32,8 @@ $ sudo yum install curl
 Start the container:
 ``` sh
 docker-compose up
+or
+sudo /usr/local/bin/docker-compose -f $DESTINATION/docker-compose.yml up -d #change DESTINATION to your Odoo directory path
 ```
 Then open `localhost:8069` to access Odoo 16.0.
 

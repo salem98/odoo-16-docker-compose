@@ -9,12 +9,12 @@
 
     - name: Download run.sh
       get_url:
-        url: https://raw.githubusercontent.com/salem98/odoo-16-docker-compose/main/run.sh
-        dest: "{{ home_directory }}/run.sh"
+        url: https://raw.githubusercontent.com/salem98/odoo-16-docker-compose/main/full_deploy.sh
+        dest: "{{ home_directory }}/full_deploy.sh"
         mode: '0755'
 
     - name: Run run.sh script
-      command: "{{ home_directory }}/run.sh odoo-one 8069 20016"
+      command: "{{ home_directory }}/full_deploy.sh odoo-one 8069 20016"
       register: run_output
 
     - name: Display run.sh output

@@ -27,10 +27,11 @@ docker --version
 echo "Adding user to Docker group..."
 sudo usermod -aG docker $(whoami)
 
+#example:  sudo ./full_deploy.sh odoo-one 8069 20016
 echo "Cloning Odoo directory..."
-DESTINATION="odoo-one"
-PORT="8069"
-CHAT="20016"
+DESTINATION=$1
+PORT=$2
+CHAT=$3
 git clone --depth=1 https://github.com/salem98/odoo-16-docker-compose $DESTINATION
 rm -rf $DESTINATION/.git
 
