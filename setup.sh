@@ -28,3 +28,4 @@ echo "Adding user to Docker group..."
 sudo usermod -aG docker $(whoami)
 
 echo "Setup completed!"
+ 

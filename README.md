@@ -55,7 +55,7 @@ ports:
 - To run Odoo container in detached mode (be able to close terminal without stopping Odoo):
 
 ```
-docker-compose up -d
+sudo docker-compose up -d
 ```
 
 - To Use a restart policy, i.e. configure the restart policy for a container, change the value related to **restart** key in **docker-compose.yml** file to one of the following:

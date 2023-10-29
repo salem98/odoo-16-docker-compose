@@ -27,7 +27,7 @@ docker --version
 echo "Adding user to Docker group..."
 sudo usermod -aG docker $(whoami)
 
-#example:  sudo ./full_deploy.sh odoo-one 8069 20016
+#example: sudo ./full_deploy.sh odoo-one 8069 20016
 echo "Cloning Odoo directory..."
 DESTINATION=$1
 PORT=$2
@@ -55,4 +55,3 @@ echo "Running Odoo..."
 sudo /usr/local/bin/docker-compose -f $DESTINATION/docker-compose.yml up -d
 
 echo "Started Odoo @ http://localhost:$PORT | Master Password: lemdev.tech | Live chat port: $CHAT"
-

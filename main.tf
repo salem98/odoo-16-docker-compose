@@ -1,3 +1,15 @@
+/*
+  terraform {
+    cloud {
+      organization = "example-org-name"
+      workspaces {
+        name = "workspace-name"
+      }
+    }
+  }
+*/
+
+
 data "aws_ami" "latest_amazon_linux" {
   most_recent = true
   filter {

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash 
 
 # Get instance IPs from Terraform output
 IPs=$(terraform output -json instance_public_ips | jq -r '. | to_entries[] | .value')
