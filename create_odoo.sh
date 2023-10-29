@@ -37,7 +37,7 @@ sed -i "s/20016/$CHAT/g" "$DESTINATION/docker-compose.yml"
 
 # Run Odoo
 echo "Starting Odoo..."
-if ! docker-compose -f "$DESTINATION/docker-compose.yml" up -d; then
+if ! sudo /usr/local/bin/docker-compose -f $DESTINATION/docker-compose.yml up -d; then
     echo "Failed to start Odoo. Exiting..."
     exit 1
 fi
