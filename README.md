@@ -2,10 +2,10 @@
 
 ## Quick Installation
 
-Install [docker](https://docs.docker.com/get-docker/) and [docker-compose](https://docs.docker.com/compose/install/) yourself, then run the following to set up first Odoo instance @ `localhost:10016` (default master password: `lemdev.tech`):
+Install [docker](https://docs.docker.com/get-docker/) and [docker-compose](https://docs.docker.com/compose/install/) yourself, then run the following to set up first Odoo instance @ `localhost:8069` (default master password: `lemdev.tech`):
 
 ``` bash
-curl -s https://raw.githubusercontent.com/salem98/odoo-16-docker-compose/main/run.sh | sudo bash -s odoo-one 10016 20016
+curl -s https://raw.githubusercontent.com/salem98/odoo-16-docker-compose/main/run.sh | sudo bash -s odoo-one 8069 20016
 ```
 and/or run the following to set up another Odoo instance @ `localhost:11016` (default master password: `lemdev.tech`):
 
@@ -15,7 +15,7 @@ curl -s https://raw.githubusercontent.com/salem98/odoo-16-docker-compose/main/ru
 
 Some arguments:
 * First argument (**odoo-one**): Odoo deploy folder
-* Second argument (**10016**): Odoo port
+* Second argument (**8069**): Odoo port
 * Third argument (**20016**): live chat port
 
 If `curl` is not found, install it:
@@ -32,7 +32,7 @@ Start the container:
 ``` sh
 docker-compose up
 ```
-Then open `localhost:10016` to access Odoo 16.0.
+Then open `localhost:8069` to access Odoo 16.0.
 
 - **If you get any permission issues**, change the folder permission to make sure that the container is able to access the directory:
 
@@ -42,11 +42,11 @@ $ sudo chmod -R 777 etc
 $ sudo chmod -R 777 postgresql
 ```
 
-- If you want to start the server with a different port, change **10016** to another value in **docker-compose.yml** inside the parent dir:
+- If you want to start the server with a different port, change **8069** to another value in **docker-compose.yml** inside the parent dir:
 
 ```
 ports:
- - "10016:8069"
+ - "8069:8069"
 ```
 
 - To run Odoo container in detached mode (be able to close terminal without stopping Odoo):
