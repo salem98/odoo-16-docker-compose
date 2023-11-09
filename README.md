@@ -3,7 +3,7 @@
 ## Quick Installation
 
 Run the following to fully setup and deploy first Odoo instance @ `localhost:8069` (default master password: `lemdev.tech`):
-Enviroment Ubuntu 22 AWS EC2
+Enviroment Amazon Linux AMIs AWS EC2 (amzn2-ami-hvm-*)
 
 ``` bash
 curl -s https://raw.githubusercontent.com/salem98/odoo-16-docker-compose/main/full_deploy.sh | sudo bash -s odoo-one 8069 20016
